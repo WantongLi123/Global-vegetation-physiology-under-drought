@@ -14,15 +14,15 @@ ii) The raw datasets used to compute all analysis results are shared with public
 
 We are happy to answer your questions! Contact: Wantong Li (wantong@bgc-jena.mpg.de)
 
-Conda environment installation:
+* Conda environment installation:
 
 Please use the enivronment.yml to set up the environment for runing provided codes. The Linux command for environment installation: conda env create -f enivronment.yml
 
-The guide of Demo_code_physiology.py:
+* The guide of Demo_code_physiology.py:
 
 To save the runtime, European domains are used instead of the global scale when calculating vegetation physiological anomalies.
 
-The guide of figure_codes:
+* The guide of figure_codes:
 
 i) All processed data are in NumPy array format for Python;
 
