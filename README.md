@@ -1,4 +1,5 @@
-https://zenodo.org/badge/396391633.svg
+[![DOI](https://zenodo.org/badge/396391633.svg)](https://zenodo.org/badge/latestdoi/396391633)
+
 
 # Global-vegetation-physiology-under-drought
 
