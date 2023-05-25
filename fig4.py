@@ -30,7 +30,6 @@ plt.rcParams['lines.markersize'] = 0.2
 def data_path(filename):
     file_path = "{path}/{filename}".format(
         path="...your_path.../file_to_upload",
-        # path="/Net/Groups/BGI/scratch/wantong/study4/programming/Code_Archive_WL/file_to_upload",
         filename=filename
     )
     return file_path
