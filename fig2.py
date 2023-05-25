@@ -292,7 +292,7 @@ for sub, fi in zip(range(2), [gs1,gs2]):
 
 
         if tt!=7 or tt!=4 or tt!=5:
-            # ax.axhline(0, linestyle='--', c='grey')
+            ax.axhline(0, linestyle='--', c='grey')
             yabs_max = abs(max(ax.get_ylim(), key=abs))
             ax.set_ylim(ymin=-yabs_max, ymax=yabs_max)
         if tt==7:
@@ -301,7 +301,7 @@ for sub, fi in zip(range(2), [gs1,gs2]):
             # ax.set_ylim(ymin=0, ymax=0.45)
             # ax.set_ylim(ymin=3, ymax=8)
         if tt==4 or tt==5:
-            # ax.axhline(0, linestyle='--', c='grey')
+            ax.axhline(0, linestyle='--', c='grey')
             ax.set_ylim(ymin=-0.05, ymax=0.05)
             # ax.set_ylim(ymin=-0.1, ymax=0.1)
             # ax.set_ylim(ymin=-0.1, ymax=0.1)
