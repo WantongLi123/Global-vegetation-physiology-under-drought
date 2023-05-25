@@ -40,7 +40,6 @@ plt.rcParams['lines.markersize'] = 0.005
 def data_path(filename):
     file_path = "{path}/{filename}".format(
         path="...your_path.../file_to_upload",
-        # path="/Net/Groups/BGI/scratch/wantong/study4/programming/Code_Archive_WL/file_to_upload",
         filename=filename
     )
     return file_path
@@ -196,76 +195,76 @@ def find_drought(drought_ind):
 
 ############################### main function
 
-# ###### Fig3 a-c #########
-# xticks = [0, 0.8, 1.2, 1.6, 4]
-# yticks = [0,1,2,3,4]
-# xtick = ['0','0.8','1.2','1.6','>1.6']
-# ytick = ['-3 months','-1 months','-8 days','+8 days','+1 months','+3 months']
-# aridity = read_data(data_path('aridity_ERA5-land_2018-2020-monthly-mean_0d25.npy'))
-# aridity[aridity<0] = np.nan
-# aridity[aridity>4] = 4
-#
-# var = [[-0.08, 0.08], [-4.5, 4.5], [-0.012, 0.012]]
-# var_name1 = ['SIF_rel', 'ET_SSEB_final', 'VOD_ratio']
-# var_name2 = ['SIFrel', 'ET ($\mathregular{Wm^{-2}}$)', 'VOD ratio']
-#
-# #####  plotting heatmap ########
-# fig = plt.figure(figsize=(3,1.5), dpi=300, tight_layout=True)
-# veg = veg_filter(0)
-# irrigation = read_data(data_path('gmia_v5_aei_pct_720_1440.npy')) # irrigation mask to remove highly irrigated areas
-# drought = read_data(data_path('Drought_ind_SM123_ERA5-Land.npy'))
-#
-# ## heatmap
-# tit = ['(a) ', '(b) ', '(c) ']
-# delta = np.zeros((3, 24, 720, 1440)) * np.nan
-# delta_ = np.zeros((3, 24, 720, 1440)) * np.nan
-# delta1 = np.zeros((3, 5, 720, 1440)) * np.nan
-# for tt in [0,1,2]:
-#     SIF_8d_ano = read_data(data_path(var_name1[tt] + '_8d_ano_globeDrought.npy'))
-#     for row in range(720):
-#         for col in range(1440):
-#             if ~np.isnan(drought[row, col]) and veg[row, col] >= 0.05 and irrigation[row, col] <= 10:
-#                 drought_ind = drought[row, col]
-#                 if drought_ind > 12 and drought_ind < 167 - 12:
-#                     SIF_pixel = SIF_8d_ano[:, row,col]
-#                     delta[tt, :, row, col] = SIF_pixel[int(drought_ind - 12):int(drought_ind + 12)]
-#
-#
-# for tt,pic in zip([0,1,2], [1,2,3]):
-#     delta[tt, :, :, :][np.isnan(delta[0, :, :, :])] = np.nan
-#     delta[tt, :, :, :][np.isnan(delta[1, :, :, :])] = np.nan
-#     delta[tt, :, :, :][np.isnan(delta[2, :, :, :])] = np.nan
-#
-#     for i, move_window1, move_window2 in zip(range(5), [-12, -4, -1, 1, 4], [-4, -1, 1, 4, 12]):
-#         delta1[tt, i, :, :] = np.nanmedian(delta[tt,int(12 + move_window1):int(12 + move_window2),:,:], axis=0)
-#
-#     for m in range(5):
-#         delta1[tt, m, :, :][np.isnan(delta1[tt, 0, :, :])] = np.nan
-#         delta1[tt, m, :, :][np.isnan(delta1[tt, 1, :, :])] = np.nan
-#         delta1[tt, m, :, :][np.isnan(delta1[tt, 2, :, :])] = np.nan
-#         delta1[tt, m, :, :][np.isnan(delta1[tt, 3, :, :])] = np.nan
-#         delta1[tt, m, :, :][np.isnan(delta1[tt, 4, :, :])] = np.nan
-#
-#     # drawing heatmap
-#     heatmap_data,num = heat_map(aridity, delta1[tt,:,:,:], xticks)
-#     print(np.nanmax(heatmap_data),np.nanmin(heatmap_data))
-#     norm = matplotlib.colors.TwoSlopeNorm(vmin=var[tt][0], vcenter=0,vmax=var[tt][1])
-#     ticks = [var[tt][0],0,var[tt][1]]
-#     colorbar_tick = [var[tt][0],0,var[tt][1]]
-#
-#     ax = fig.add_subplot(1, 3, pic)
-#     heatmap(ax, heatmap_data, ytick, xtick, ticks, colorbar_tick, norm=norm, cmap=plt.get_cmap('coolwarm_r'))
-#
-#     if pic==1:
-#         ax.set_yticklabels(ytick)
-#         ax.set_ylabel('Drought period')
-#     else:
-#         ax.get_yaxis().set_visible(False)
-#
-#     ax.set_xlabel('Aridity')
-#     ax.set_title(tit[pic-1] + var_name2[tt])
-#
-# plt.savefig(data_path('test/Fig3a-c.jpg'),bbox_inches='tight')
+###### Fig3 a-c #########
+xticks = [0, 0.8, 1.2, 1.6, 4]
+yticks = [0,1,2,3,4]
+xtick = ['0','0.8','1.2','1.6','>1.6']
+ytick = ['-3 months','-1 months','-8 days','+8 days','+1 months','+3 months']
+aridity = read_data(data_path('aridity_ERA5-land_2018-2020-monthly-mean_0d25.npy'))
+aridity[aridity<0] = np.nan
+aridity[aridity>4] = 4
+
+var = [[-0.08, 0.08], [-4.5, 4.5], [-0.012, 0.012]]
+var_name1 = ['SIF_rel', 'ET_SSEB_final', 'VOD_ratio']
+var_name2 = ['SIFrel', 'ET ($\mathregular{Wm^{-2}}$)', 'VOD ratio']
+
+#####  plotting heatmap ########
+fig = plt.figure(figsize=(3,1.5), dpi=300, tight_layout=True)
+veg = veg_filter(0)
+irrigation = read_data(data_path('gmia_v5_aei_pct_720_1440.npy')) # irrigation mask to remove highly irrigated areas
+drought = read_data(data_path('Drought_ind_SM123_ERA5-Land.npy'))
+
+## heatmap
+tit = ['(a) ', '(b) ', '(c) ']
+delta = np.zeros((3, 24, 720, 1440)) * np.nan
+delta_ = np.zeros((3, 24, 720, 1440)) * np.nan
+delta1 = np.zeros((3, 5, 720, 1440)) * np.nan
+for tt in [0,1,2]:
+    SIF_8d_ano = read_data(data_path(var_name1[tt] + '_8d_ano_globeDrought.npy'))
+    for row in range(720):
+        for col in range(1440):
+            if ~np.isnan(drought[row, col]) and veg[row, col] >= 0.05 and irrigation[row, col] <= 10:
+                drought_ind = drought[row, col]
+                if drought_ind > 12 and drought_ind < 167 - 12:
+                    SIF_pixel = SIF_8d_ano[:, row,col]
+                    delta[tt, :, row, col] = SIF_pixel[int(drought_ind - 12):int(drought_ind + 12)]
+
+
+for tt,pic in zip([0,1,2], [1,2,3]):
+    delta[tt, :, :, :][np.isnan(delta[0, :, :, :])] = np.nan
+    delta[tt, :, :, :][np.isnan(delta[1, :, :, :])] = np.nan
+    delta[tt, :, :, :][np.isnan(delta[2, :, :, :])] = np.nan
+
+    for i, move_window1, move_window2 in zip(range(5), [-12, -4, -1, 1, 4], [-4, -1, 1, 4, 12]):
+        delta1[tt, i, :, :] = np.nanmedian(delta[tt,int(12 + move_window1):int(12 + move_window2),:,:], axis=0)
+
+    for m in range(5):
+        delta1[tt, m, :, :][np.isnan(delta1[tt, 0, :, :])] = np.nan
+        delta1[tt, m, :, :][np.isnan(delta1[tt, 1, :, :])] = np.nan
+        delta1[tt, m, :, :][np.isnan(delta1[tt, 2, :, :])] = np.nan
+        delta1[tt, m, :, :][np.isnan(delta1[tt, 3, :, :])] = np.nan
+        delta1[tt, m, :, :][np.isnan(delta1[tt, 4, :, :])] = np.nan
+
+    # drawing heatmap
+    heatmap_data,num = heat_map(aridity, delta1[tt,:,:,:], xticks)
+    print(np.nanmax(heatmap_data),np.nanmin(heatmap_data))
+    norm = matplotlib.colors.TwoSlopeNorm(vmin=var[tt][0], vcenter=0,vmax=var[tt][1])
+    ticks = [var[tt][0],0,var[tt][1]]
+    colorbar_tick = [var[tt][0],0,var[tt][1]]
+
+    ax = fig.add_subplot(1, 3, pic)
+    heatmap(ax, heatmap_data, ytick, xtick, ticks, colorbar_tick, norm=norm, cmap=plt.get_cmap('coolwarm_r'))
+
+    if pic==1:
+        ax.set_yticklabels(ytick)
+        ax.set_ylabel('Drought period')
+    else:
+        ax.get_yaxis().set_visible(False)
+
+    ax.set_xlabel('Aridity')
+    ax.set_title(tit[pic-1] + var_name2[tt])
+
+plt.savefig(data_path('test/Fig3a-c.jpg'),bbox_inches='tight')
 
 
 
