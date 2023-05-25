@@ -8,12 +8,11 @@ ii) Codes required to reproduce main figures in the paper.
 
 Note:
 
-i) The raw data formatted as .npy required to calculate vegetation physiological components are stored at Zenodo https://doi.org/...;
+(i) The raw data formatted as .npy required to calculate vegetation physiological components are stored at Zenodo https://doi.org/...;
 
-ii) The raw datasets used to compute all analysis results are shared with public links in the paper. Processed data required to produce the final figures are also stored at Zenodo https://doi.org/....
+(ii) The raw datasets used to compute all analysis results are shared with public links in the paper. Processed data required to produce the final figures are also stored at Zenodo https://doi.org/....
 
-
-* Conda environment installation:
+(iii) Conda environment installation:
 
 Please use the enivronment.yml to set up the environment for runing provided codes. The Linux command for environment installation: conda env create -f enivronment.yml
 
