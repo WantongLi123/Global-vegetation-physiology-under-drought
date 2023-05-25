@@ -1,3 +1,5 @@
+https://zenodo.org/badge/396391633.svg
+
 # Global-vegetation-physiology-under-drought
 
 This repository contains two parts for a paper to be published as: Li, W., Pacheco-Labrador, J., Migliavacca, M., Miralles, D., Hoek van Dijke, A., Reichstein, M., Forkel, M., Zhang, W., Frankenberg, C., Panwar, A., Zhang, Q., Weber, U., Gentine, P., Orth, R. (2023). Widespread and complex drought effects on vegetation physiology inferred from space (Under review).
